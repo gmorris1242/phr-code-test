@@ -1,5 +1,5 @@
 <%= pb_rails("card", props: { padding: 'none' }) do %>
-  <%= pb_rails("list", props: { ordered: false, dark: false, borderless: false, data: { controller: "ticket-list" } }) do %>
+  <%= pb_rails("list", props: { ordered: false, dark: false, borderless: false, data: { controller: "ticket" } }) do %>
     <%= pb_rails("list/item", props: { padding: 'sm', classname: "ticket-list-header #{color}" }) do %>
       <div class="display_flex align_items_center justify_content_space_between width_100_percent">
         <%= pb_rails("caption", props: { text: title, size: 'md', color: "lighter" }) %>
@@ -24,7 +24,7 @@
         <% end %>
     <% end %>
 
-    <div data-ticket-list-target="extra" class="hidden">
+    <div data-ticket-target="extra" class="hidden">
       <% tickets.drop(6).each do |ticket| %>
         <%= pb_rails("list/item", props: { padding_x: 'sm', padding_y: 'xs', classname: "display_flex align_items_center ticket-list-item" }) do %>
           <%= pb_rails("avatar", props: { size: "xs", image_url: ticket[:avatar] }) %>
@@ -45,7 +45,7 @@
           text: "Show More",
           href: "javascript:void(0)",
           classname: 'bold',
-          data: { action: "click->ticket-list#toggle", ticket_list_target: "toggleButton" }
+          data: { action: "click->ticket#toggle", ticket_target: "toggleButton" }
         }) %>
       <% end %>
     <% end %>
