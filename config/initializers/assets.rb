@@ -17,4 +17,8 @@ Rails.application.config.assets.paths << Rails.root.join("node_modules", "@forta
 
 puts "Sass load paths: #{Rails.application.config.sass.load_paths}"
 
-Rails.application.config.assets.paths << Rails.root.join("node_modules", "@fortawesome", "fontawesome-free")
+# Add the Font Awesome CSS directory to Sprockets' search path
+Rails.application.config.assets.paths << Rails.root.join("node_modules", "@fortawesome", "fontawesome-free", "css")
+
+# Also add the webfonts directory so fonts can be found
+Rails.application.config.assets.paths << Rails.root.join("node_modules", "@fortawesome", "fontawesome-free", "webfonts")
