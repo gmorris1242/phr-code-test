@@ -2,4 +2,4 @@
 //= link_directory ../stylesheets .css
 //= link_tree ../../javascript .js
 //= link_tree ../../../vendor/javascript .js
-//= link @fortawesome/fontawesome-free/css/all.css
+//= link fontawesome-free/css/all.css
