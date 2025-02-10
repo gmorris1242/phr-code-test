@@ -14,7 +14,13 @@
             image_url: ticket[:avatar],
           }) %>
 
-          <span class="pl_xs width_100_percent"><%= truncate(ticket[:text], 12) %></span>
+          <div class="desktop-only pl_xs width_100_percent">
+            <span class=""><%= truncate(ticket[:text], 12) %></span>
+          </div>
+          <div class="mobile-only pl_xs width_100_percent">
+            <span class=""><%= truncate(ticket[:text], 25) %></span>
+          </div>
+
           <%= pb_rails("icon", props: { icon: "angle-right", size: "sm", color: "text_lt_light" }) %>
         <% end %>
     <% end %>

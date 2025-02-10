@@ -54,7 +54,7 @@ const GraphDashboard = () => {
             yAxis: {
               min: 0,
               max: 10000,
-              tickPositions: [0, 1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000, 10000], // 🔥 Force exact positions
+              tickPositions: [0, 1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000, 10000]
             }
           }}
         />
