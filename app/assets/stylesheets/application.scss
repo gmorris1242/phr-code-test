@@ -1,0 +1,63 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+
+// Playbook App Configuration for Font Family
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+$font_family_base: 'Montserrat';
+
+// Enabled Weights in Montserat
+$lighter:       200;
+$light:         200;
+$regular:       500;
+$bold:          700;
+$bolder:        700;
+$boldest:       700;
+$extrabold:     700;
+
+@import "reset";
+@import "playbook";
+
+// To use Playbook tokens, you must import the relevant files as shown below
+// To view all available tokens, visit https://github.com/powerhome/playbook/tree/master/playbook/app/pb_kits/playbook/tokens
+// To see the tokens visually, see our docs here: https://playbook.powerapp.cloud/visual_guidelines
+@import "tokens/spacing";
+@import "tokens/typography";
+@import "settings/**/*";
+@import "layouts/**/*";
+@import "pages/**/*";
+
+
+// Can't get the font_family_base override to work for some reason so this is a quick fix
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+li,
+[class^="pb_caption_kit"],
+[class^="pb_body_kit"],
+.pb_pill_text,
+.pb_card_body_kit,
+text {
+ font-family: $font_family_base !important;
+}
+
+text { font-weight: $regular !important; }
